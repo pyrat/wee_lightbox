@@ -1,0 +1,24 @@
+WeeLightbox
+===========
+
+This is a packaged version of lightbox for viewing images on the screen in the popular lightbox design pattern.
+
+Please refer to the lightbox docs for more info. Included are some rails helpers for easy integration into your site.
+
+Install
+=======
+
+
+
+Example
+=======
+
+In your layout add the following in the head section.
+
+<%= load_lightbox %> If you have not already done so:
+<%= javascript_include_tag :defaults %> to load the prototype javascript library beforehand.
+
+For each image that you would like to make a lightbox to
+
+
+Copyright (c) 2008 Alastair Brunton, released under the MIT license
