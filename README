@@ -3,22 +3,37 @@ WeeLightbox
 
 This is a packaged version of lightbox for viewing images on the screen in the popular lightbox design pattern.
 
-Please refer to the lightbox docs for more info. Included are some rails helpers for easy integration into your site.
+Please refer to the lightbox docs for more info. Included are some rails helpers for easy integration into your site. The lightbox javascript is slightly tweaked to configure the location of images and increase the speed of resize.
+
+You can edit lightbox.js to further tweak these if you wish.
 
 Install
 =======
 
+If you install from github with rails 2.1+ it will install the files into your public directory. If you install with another method, you may need to issue a recursive copy command manually. 
 
+Also this install script is untested on windows.
 
 Example
 =======
 
 In your layout add the following in the head section.
 
-<%= load_lightbox %> If you have not already done so:
-<%= javascript_include_tag :defaults %> to load the prototype javascript library beforehand.
+<%= javascript_include_tag :defaults %> 
+<%= yield :page_includes %>
+
+In your template:
+
+<%= load_lightbox %>
 
 For each image that you would like to make a lightbox to
 
+<%= lightbox_to('/images/small.gif', '/images/large.gif', "Tasty image caption")
+
+If you want to have more than one lightbox on a page and have the lightbox operate with a slideshow between images..
+
+<%= lightbox_to('/images/small.gif', '/images/large.gif', "Tasty image caption", "group_name")
+
+Where group name needs to be the same for all images in the slideshow.
 
 Copyright (c) 2008 Alastair Brunton, released under the MIT license
